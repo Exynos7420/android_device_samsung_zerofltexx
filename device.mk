@@ -18,7 +18,9 @@ LOCAL_PATH := device/samsung/zerofltexx
 
 # Permissions
 PRODUCT_COPY_FILES += \
-	frameworks/native/data/etc/android.hardware.consumerir.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.consumerir.xml
+	frameworks/native/data/etc/android.hardware.consumerir.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.consumerir.xml \
+	$(LOCAL_PATH)/configs/permissions/com.samsung.permission.HRM_EXT.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.samsung.permission.HRM_EXT.xml \
+	$(LOCAL_PATH)/configs/permissions/com.samsung.permission.SSENSOR.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.samsung.permission.SSENSOR.xml
 
 # AAPT
 # This device is 640dpi.  However the platform doesn't
@@ -33,7 +35,7 @@ PRODUCT_AAPT_PREBUILT_DPI := xxxhdpi xxhdpi xhdpi hdpi
 # Audio
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/configs/audio/mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths_0.xml \
-	$(LOCAL_PATH)/configs/audio/mixer_paths-audience.xml:system/vendor/etc/mixer_paths_0-audience.xml
+	$(LOCAL_PATH)/configs/audio/mixer_paths-audience.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths_0-audience.xml
 
 # Camera-Shim
 PRODUCT_PACKAGES += \
