@@ -423,15 +423,16 @@
 	</path>
 
     <path name="camcorder-headphone-mic">
-        <path name="camcorder-mic" />
+        <path name="camcorder-mic-oe" />
     </path>
 
 
     <!-- camcorder input -->
-    <path name="camcorder-mic">
+    <path name="camcorder-mic-oe">
         <path name="capture_channel_left"/>
         <path name="main-mic" />
-        <path name="2nd-mic" />
+    	<path name="2nd-mic" />
+		<path name="gain-media-mic"/>
     </path>
 
     <!-- NB -->
@@ -827,11 +828,11 @@
     </path>
 
     <!-- camcorder input volume -->
-    <path name="gain-camcorder-mic">
-        <ctl name="IN1L Digital Volume" value="128" />
-        <ctl name="LHPF1 Input 1 Volume" value="32" />
-        <ctl name="IN3L Digital Volume" value="128" />
-        <ctl name="LHPF2 Input 1 Volume" value="32" />
+    <path name="gain-camcorder-mic-oe">
+        <ctl name="IN1L Digital Volume" value="148" />
+        <ctl name="LHPF1 Input 1 Volume" value="36" />
+        <ctl name="IN3L Digital Volume" value="148" />
+        <ctl name="LHPF2 Input 1 Volume" value="36" />
     </path>
 
     <!-- recognition input volume -->
@@ -1011,6 +1012,11 @@
 		<path name="media-bt-sco-headset-in"/>
 		<path name="gain-media-bt-sco-headset-in"/>
 	</path>
+
+    <path name="camcorder-mic">
+        <path name="camcorder-mic-oe" />
+        <path name="gain-camcorder-mic-oe" />
+    </path>
 
 	<path name="voice-rec-mic">
 		<path name="capture_channel_left"/>
