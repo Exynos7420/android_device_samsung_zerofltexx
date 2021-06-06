@@ -18,7 +18,7 @@ include $(CLEAR_VARS)
 LOCAL_SRC_FILES := \
     libbauthtzcommon.c
 
-LOCAL_SHARED_LIBRARIES := libutils
+LOCAL_SHARED_LIBRARIES := libutils liblog
 
 LOCAL_MODULE := libbauthtzcommon_shim
 LOCAL_MODULE_TAGS := optional
