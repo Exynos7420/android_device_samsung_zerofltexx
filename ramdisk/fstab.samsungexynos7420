@@ -17,3 +17,7 @@
 
 # VOLD
 /devices/15400000.usb/15400000.dwc3/xhci-hcd.2.auto/usb*      auto           auto      defaults                                                                                           voldmanaged=usbdisk:auto
+
+
+# ZRAM
+/dev/block/zram0                                              none           swap      defaults,discard                                                                                   zramsize=2147483648,max_comp_streams=8,swapprio=10,notrim
