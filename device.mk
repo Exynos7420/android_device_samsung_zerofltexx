@@ -40,7 +40,7 @@ PRODUCT_PACKAGES += \
 
 # Cpboot-daemon
 PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/prebuilt/cbd:$(TARGET_COPY_OUT_SYSTEM)/bin/cbd
+	$(LOCAL_PATH)/prebuilt/cbd:$(TARGET_COPY_OUT_VENDOR)/bin/cbd
 
 # Fingerprint-Shim
 PRODUCT_PACKAGES += \
@@ -58,11 +58,11 @@ PRODUCT_PACKAGES += \
 
 # Keylayouts
 PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/configs/keylayout/sec_touchkey.kl:system/usr/keylayout/sec_touchkey.kl \
-	$(LOCAL_PATH)/configs/keylayout/sec_touchscreen.kl:system/usr/keylayout/sec_touchscreen.kl \
-	$(LOCAL_PATH)/configs/idc/Synaptics_HID_TouchPad.idc:system/usr/idc/Synaptics_HID_TouchPad.idc \
-	$(LOCAL_PATH)/configs/idc/ft5x06_ts.idc:system/usr/idc/ft5x06_ts.idc \
-	$(LOCAL_PATH)/configs/idc/sec_touchscreen.idc:system/usr/idc/sec_touchscreen.idc
+	$(LOCAL_PATH)/configs/keylayout/sec_touchkey.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/sec_touchkey.kl \
+	$(LOCAL_PATH)/configs/keylayout/sec_touchscreen.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/sec_touchscreen.kl \
+	$(LOCAL_PATH)/configs/idc/Synaptics_HID_TouchPad.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/Synaptics_HID_TouchPad.idc \
+	$(LOCAL_PATH)/configs/idc/ft5x06_ts.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/ft5x06_ts.idc \
+	$(LOCAL_PATH)/configs/idc/sec_touchscreen.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/sec_touchscreen.idc
 
 # NFC
 PRODUCT_COPY_FILES += \
@@ -76,7 +76,7 @@ PRODUCT_PACKAGES += \
     libExynosOMX_shim
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/media/android.hardware.media.omx@1.0-service.rc:system/vendor/etc/init/android.hardware.media.omx@1.0-service.rc
+    $(LOCAL_PATH)/configs/media/android.hardware.media.omx@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.media.omx@1.0-service.rc
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
@@ -91,8 +91,8 @@ PRODUCT_PACKAGES += \
 
 # Sensors
 PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/configs/sensors/gps.xml:system/etc/gps.xml \
-	$(LOCAL_PATH)/configs/sensors/lhd.conf:system/etc/lhd.conf
+	$(LOCAL_PATH)/configs/sensors/gps.xml:$(TARGET_COPY_OUT_VENDOR)/etc/gnss/gps.xml \
+	$(LOCAL_PATH)/configs/sensors/lhd.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/lhd.conf
 
 # Soong
 PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
