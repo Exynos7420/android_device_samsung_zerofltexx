@@ -99,3 +99,7 @@ PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
 
 # Call the proprietary
 $(call inherit-product, vendor/samsung/zerofltexx/zerofltexx-vendor.mk)
+
+# VNDK
+PRODUCT_PACKAGES += \
+    libgui_vendor
