@@ -63,6 +63,8 @@ extract "${MY_DIR}/proprietary-files.txt" "${SRC}" "${KANG}" --section "${SECTIO
 BLOB_ROOT="$ANDROID_ROOT"/vendor/"$VENDOR"/"$DEVICE"/proprietary
 
 "${PATCHELF}" --replace-needed libgui.so libgui_vendor.so $BLOB_ROOT/vendor/bin/hw/gpsd
+"${PATCHELF}" --replace-needed libgui.so libgui_vendor.so $BLOB_ROOT/vendor/lib/hw/camera.exynos5.so
+"${PATCHELF}" --replace-needed libgui.so libgui_vendor.so $BLOB_ROOT/vendor/lib64/hw/camera.exynos5.so
 "${PATCHELF}" --replace-needed libprotobuf-cpp-full.so libprotobuf-cpp-fl24.so $BLOB_ROOT/vendor/lib/libsec-ril.so
 sed -i "s/libprotobuf-cpp-full/libprotobuf-cpp-fl24/" $BLOB_ROOT/vendor/lib64/libsec-ril.so
 "${PATCHELF}" --replace-needed libprotobuf-cpp-full.so libprotobuf-cpp-fl24.so $BLOB_ROOT/vendor/lib/libsec-ril-dsds.so
