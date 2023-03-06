@@ -101,7 +101,8 @@ PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
 $(call inherit-product, vendor/samsung/zerofltexx/zerofltexx-vendor.mk)
 
 # VNDK
-# libstdc++: 		libGLES_mali.so
 PRODUCT_PACKAGES += \
-    libstdc++.vendor
+    libstdc++.vendor \
+	libgui_vendor \
+	libhwbinder.vendor
 

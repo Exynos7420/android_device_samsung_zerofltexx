@@ -62,13 +62,19 @@ extract "${MY_DIR}/proprietary-files.txt" "${SRC}" "${KANG}" --section "${SECTIO
 # Fix proprietary blobs
 BLOB_ROOT="$ANDROID_ROOT"/vendor/"$VENDOR"/"$DEVICE"/proprietary
 
+"${PATCHELF}" --remove-needed libicuuc.so $BLOB_ROOT/vendor/bin/hw/gpsd
+"${PATCHELF}" --remove-needed libicuuc.so $BLOB_ROOT/vendor/bin/hw/lhd
 "${PATCHELF}" --replace-needed libgui.so libgui_vendor.so $BLOB_ROOT/vendor/bin/hw/gpsd
+"${PATCHELF}" --replace-needed libgui.so libgui_vendor.so $BLOB_ROOT/vendor/bin/hw/lhd
 "${PATCHELF}" --replace-needed libgui.so libgui_vendor.so $BLOB_ROOT/vendor/lib/hw/camera.exynos5.so
 "${PATCHELF}" --replace-needed libgui.so libgui_vendor.so $BLOB_ROOT/vendor/lib64/hw/camera.exynos5.so
+"${PATCHELF}" --replace-needed libgui.so libgui_vendor.so $BLOB_ROOT/vendor/lib/libwrappergps.so
+"${PATCHELF}" --replace-needed libgui.so libgui_vendor.so $BLOB_ROOT/vendor/lib64/libwrappergps.so
 "${PATCHELF}" --replace-needed libprotobuf-cpp-full.so libprotobuf-cpp-fl24.so $BLOB_ROOT/vendor/lib/libsec-ril.so
 sed -i "s/libprotobuf-cpp-full/libprotobuf-cpp-fl24/" $BLOB_ROOT/vendor/lib64/libsec-ril.so
 "${PATCHELF}" --replace-needed libprotobuf-cpp-full.so libprotobuf-cpp-fl24.so $BLOB_ROOT/vendor/lib/libsec-ril-dsds.so
 sed -i "s/libprotobuf-cpp-full/libprotobuf-cpp-fl24/" $BLOB_ROOT/vendor/lib64/libsec-ril-dsds.so
+"${PATCHELF}" --remove-needed libhidltransport.so $BLOB_ROOT/vendor/lib64/hw/nfc_nci.default.so
 
 sed -i "s|system/lib|vendor/lib|g" $BLOB_ROOT/vendor/lib/libExynosOMX_Core.so
 sed -i "s|system/lib|vendor/lib|g" $BLOB_ROOT/vendor/lib64/libExynosOMX_Core.so
