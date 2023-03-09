@@ -32,7 +32,8 @@ PRODUCT_AAPT_PREBUILT_DPI := xxxhdpi xxhdpi xhdpi hdpi
 
 # Audio
 PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/configs/audio/mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths_0.xml
+	$(LOCAL_PATH)/configs/audio/mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths_0.xml \
+	$(LOCAL_PATH)/configs/audio/mixer_paths-audience.xml:system/vendor/etc/mixer_paths_0-audience.xml
 
 # Camera-Shim
 PRODUCT_PACKAGES += \
