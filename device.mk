@@ -92,6 +92,10 @@ PRODUCT_PACKAGES += \
 	init.zerofltexx.rc \
 	ueventd.samsungexynos7420.rc
 
+# Ril
+PRODUCT_PROPERTY_OVERRIDES += \
+	persist.sys.cpboot=disable
+
 # Sensors
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/configs/sensors/gps.xml:system/etc/gps.xml \
